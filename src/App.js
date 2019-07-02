@@ -6,6 +6,7 @@ import Accounts from './views/Accounts'
 import Deals from './views/deals'
 import Orders from './views/Orders'
 import Signin from './views/signin'
+import ItemDetail from './views/ItemDetail'
 import './App.css'
 
 // Very simple layout for now; Eventually need to set up navigation
@@ -32,12 +33,13 @@ class App extends Component {
   return (
     <div className="App"  style={{backgroundColor: "#345eb5"}}>
     {{
-      "specials": (<Specials clickFunc={this.handleChoice.bind(this,"orders")}/>),
+      "specials": (<Specials clickFunc={this.handleChoice.bind(this,"itemDetail")}/>),
       "orders": (<Orders />),
       "orderForm": (<OrderForm />),
       "deals": (<Deals />),
       "account": (<Accounts />),
-      "signin": (<Signin />)
+      "signin": (<Signin />),
+      "itemDetail": (<ItemDetail />),
     }[this.state.viewShowing]
     }
       <div style={{height: 50, minWidth: "100vw"}}>
